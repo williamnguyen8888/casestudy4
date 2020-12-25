@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpSession;
 
 @RestController
+@RequestMapping("/admin/account")
 public class AccountApi {
     @Autowired
     private IAccountService AccountService;

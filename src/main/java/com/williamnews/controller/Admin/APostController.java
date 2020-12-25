@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/admin")
-public class AdminPostController {
+public class APostController {
     @GetMapping("/post")
     public ModelAndView adminPost(){
         ModelAndView modelAndView = new ModelAndView("/admin/html/listOrders");
