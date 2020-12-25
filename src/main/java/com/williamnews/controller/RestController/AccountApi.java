@@ -4,6 +4,7 @@ import com.williamnews.Service.IAccountService;
 import com.williamnews.model.AccountEntity;
 import com.williamnews.model.LoginEntity;
 import com.williamnews.model.Response;
+import com.williamnews.model.ResponseStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,14 +24,14 @@ public class AccountApi {
     public Response loginApi(@RequestBody LoginEntity Login, HttpSession session) {
         AccountEntity account = AccountService.checkLogin(Login);
         if (account == null){
-            rs.setStatus(rs.ERROR);
+            rs.setStatus(ResponseStatus.ERROR);
             rs.setMessage("ERROR");
             return rs;
         }
         session.setAttribute("username", account.getUserName());
         session.setAttribute("userType",  account.getAccountType());
         rs.setData(account);
-        rs.setStatus(rs.SUCCESS);
+        rs.setStatus(ResponseStatus.SUCCESS);
         rs.setMessage("Success");
         return rs;
     }
@@ -38,7 +39,7 @@ public class AccountApi {
     public Response loginApi() {
         Iterable<AccountEntity> accountList = AccountService.findAll();
         rs.setData(accountList);
-        rs.setStatus(rs.SUCCESS);
+        rs.setStatus(ResponseStatus.SUCCESS);
         rs.setMessage("Success");
         return rs;
     }
@@ -46,7 +47,7 @@ public class AccountApi {
     public Response loginApi(@RequestBody AccountEntity accountEntity) {
         AccountService.save(accountEntity);
         rs.setData(accountEntity);
-        rs.setStatus(rs.SUCCESS);
+        rs.setStatus(ResponseStatus.SUCCESS);
         rs.setMessage("Success");
         return rs;
     }

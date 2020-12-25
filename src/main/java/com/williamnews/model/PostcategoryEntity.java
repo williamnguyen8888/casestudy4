@@ -9,7 +9,7 @@ import java.util.Objects;
 public class PostcategoryEntity {
     private int id;
     private String name;
-    private String phote;
+    private String photo;
     private String description;
     private Integer postCount;
     private Timestamp createdTime;
@@ -35,13 +35,13 @@ public class PostcategoryEntity {
     }
 
     @Basic
-    @Column(name = "phote")
-    public String getPhote() {
-        return phote;
+    @Column(name = "photo")
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setPhote(String phote) {
-        this.phote = phote;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     @Basic
@@ -79,11 +79,11 @@ public class PostcategoryEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PostcategoryEntity that = (PostcategoryEntity) o;
-        return id == that.id && Objects.equals(name, that.name) && Objects.equals(phote, that.phote) && Objects.equals(description, that.description) && Objects.equals(postCount, that.postCount) && Objects.equals(createdTime, that.createdTime);
+        return id == that.id && Objects.equals(name, that.name) && Objects.equals(photo, that.photo) && Objects.equals(description, that.description) && Objects.equals(postCount, that.postCount) && Objects.equals(createdTime, that.createdTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, phote, description, postCount, createdTime);
+        return Objects.hash(id, name, photo, description, postCount, createdTime);
     }
 }

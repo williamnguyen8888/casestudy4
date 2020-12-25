@@ -5,9 +5,6 @@ public class Response {
     private int status;
     private String message;
 
-    public final int SUCCESS = 1;
-    public final int ERROR = 2;
-    public final int ACCESS_DENIED = 3;
 
     public Response() {
     }
