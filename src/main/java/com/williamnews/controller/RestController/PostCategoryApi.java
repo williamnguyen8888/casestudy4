@@ -5,10 +5,12 @@ import com.williamnews.model.PostcategoryEntity;
 import com.williamnews.model.Response;
 import com.williamnews.model.ResponseStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/admin/postCategory")
+@CrossOrigin("*")
 public class PostCategoryApi {
     @Autowired
     private IPostCategoryService postCategoryService;
@@ -22,7 +24,7 @@ public class PostCategoryApi {
         rs.setMessage("SUCCESS");
         return rs;
     }
-    @RequestMapping(value = "/postCategoryApi", method = RequestMethod.POST)
+    @RequestMapping(value = "/postCategoryApi", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Response CreatePostCategory(@RequestBody PostcategoryEntity postcategoryEntity) {
         postCategoryService.save(postcategoryEntity);
         rs.setData(postcategoryEntity);
