@@ -801,7 +801,7 @@
                                                                     <div class="col-md-12">
                                                                         <div id="wizardb">
                                                                             <section>
-                                                                                <form class="wizard-form" method="post">
+                                                                                <form class="wizard-form" method="post" name="name" id="form-addnew">
                                                                                     <h3>Product Info</h3>
 
                                                                                     <div class="form-group row">
@@ -809,7 +809,7 @@
                                                                                             <label class="block">Name *</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="text" id="nameInput" class="form-control" />
+                                                                                            <input type="text" id="nameInput" class="form-control" required/>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="form-group row">
@@ -845,10 +845,10 @@
                                                                                             <label class="block">Create time:</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="datetime-local" id="createTimeInput" class="form-control required" />
+                                                                                            <input type="datetime-local" id="createTimeInput" class="form-control required" required />
                                                                                         </div>
                                                                                     </div>
-                                                                                    <input type="button" class="btn btn-success" onclick="create()" value="Add New" />
+                                                                                    <input type="submit" class="btn btn-success" onclick="create()" value="Add New" />
                                                                                 </form>
                                                                             </section>
                                                                         </div>
@@ -1012,7 +1012,6 @@
     });
 
     function create(){
-        debugger;
         var name = $("#nameInput").val();
         var photo = $("#photoInput").val();
         var description = $("#desInput").val();
@@ -1039,15 +1038,16 @@
                 alertStatus("Add new Category success", "success");
                 $("#nameInput").val("");
                 $("#photoInput").val("");
-                $("desInput").val("");
+                $("#desInput").val("");
                 $("#viewCountInput").val("");
                 $("#createTimeInput").val("");
                 $('#newaccount').modal('toggle');
-                    $('#dataTableLoad').append(
-                        `<tr id="idRow`+item.id+`"><td>` + postCategory.id + `</td><td>` + postCategory.name + `</td><td>` + postCategory.postCount + `</td><td>` + postCategory.description +
+                debugger;
+                $('#dataTableLoad').append(
+                        `<tr id="idRow`+postCategory.id+`"><td>` + postCategory.id + `</td><td>` + postCategory.name + `</td><td>` + postCategory.postCount + `</td><td>` + postCategory.description +
                         `</td>
                             <td><button class="btn btn-primary"><i class="far fa-edit"></i> Edit</button></td>
-                            <td><button class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
+                            <td><button onclick="deleteRow(`+ postCategory.id +`)" class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
                         </tr>`
                     )
             },
@@ -1091,7 +1091,7 @@
                     `<td>` + postCategory.id + `</td><td>` + postCategory.name + `</td><td>` + postCategory.postCount + `</td><td>` + postCategory.description +
                     `</td>
                             <td><button class="btn btn-primary" data-toggle="modal" data-target="#newaccount`+postCategory.id+`"><i class="far fa-edit"></i> Edit</button></td>
-                            <td><button class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
+                            <td><button onclick="deleteRow(`+ postCategory.id +`)" class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
                         `
                 )
                 $('#newaccount'+postCategory.id).modal('toggle');
@@ -1127,7 +1127,7 @@
                                                          class="modal fade" role="dialog">
                                                         <div class="modal-dialog modal-lg">
 
-                                                          
+
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <button type="button" class="close"

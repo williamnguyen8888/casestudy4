@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 public class WilliamnewsApplication {
 
     public static void main(String[] args) {
-
         SpringApplication.run(WilliamnewsApplication.class, args);
     }
 
