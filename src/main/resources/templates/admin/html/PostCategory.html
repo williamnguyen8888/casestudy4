@@ -16,6 +16,24 @@
         .NavTable {
             text-align: center;
         }
+        #searchCategory[type=text] {
+            width: 160px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('https://www.w3schools.com/howto/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        #searchCategory[type=text]:focus {
+            width: 100%;
+        }
     </style>
     <script type="text/javascript" src="files/bower_components/jquery/js/jquery.min.js"></script>
 
@@ -39,7 +57,8 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="files/bower_components/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
     <link rel="stylesheet" href="files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
 
@@ -778,8 +797,10 @@
 
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <h5>List Product</h5>
-                                                    <button type="button" class="btn btn-success" data-target="#newaccount"
+                                                    <input type="text" id="searchCategory" placeholder="Search"
+                                                           class="form-control col-md-6" style="float: left">
+                                                    <button type="button" class="btn btn-success"
+                                                            data-target="#newaccount"
                                                             data-toggle="modal" style="float: right">
                                                         <i class="fas fa-user-plus"></i> New Account
                                                     </button>
@@ -801,54 +822,74 @@
                                                                     <div class="col-md-12">
                                                                         <div id="wizardb">
                                                                             <section>
-                                                                                <form class="wizard-form" method="post" name="name" id="form-addnew">
+                                                                                <form class="wizard-form" method="post"
+                                                                                      name="name" id="form-addnew">
                                                                                     <h3>Product Info</h3>
 
                                                                                     <div class="form-group row">
                                                                                         <div class="col-sm-12">
-                                                                                            <label class="block">Name *</label>
+                                                                                            <label class="block">Name
+                                                                                                *</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="text" id="nameInput" class="form-control" required/>
+                                                                                            <input type="text"
+                                                                                                   id="nameInput"
+                                                                                                   class="form-control"
+                                                                                                   required/>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="form-group row">
                                                                                         <div class="col-sm-12">
-                                                                                            <label class="block">Photo *</label>
+                                                                                            <label class="block">Photo
+                                                                                                *</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="text" id="photoInput" class="form-control" />
+                                                                                            <input type="text"
+                                                                                                   id="photoInput"
+                                                                                                   class="form-control"/>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="form-group row">
                                                                                         <div class="col-sm-12">
-                                                                                            <label class="block">Description *</label>
+                                                                                            <label class="block">Description
+                                                                                                *</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="text" id="desInput" class="form-control" />
+                                                                                            <input type="text"
+                                                                                                   id="desInput"
+                                                                                                   class="form-control"/>
                                                                                         </div>
                                                                                     </div>
-
 
 
                                                                                     <div class="form-group row">
                                                                                         <div class="col-sm-12">
-                                                                                            <label class="block">View Count*</label>
+                                                                                            <label class="block">View
+                                                                                                Count*</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="number" id="viewCountInput" class="form-control" />
+                                                                                            <input type="number"
+                                                                                                   id="viewCountInput"
+                                                                                                   class="form-control"/>
                                                                                         </div>
                                                                                     </div>
 
                                                                                     <div class="form-group row">
                                                                                         <div class="col-sm-12">
-                                                                                            <label class="block">Create time:</label>
+                                                                                            <label class="block">Create
+                                                                                                time:</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="datetime-local" id="createTimeInput" class="form-control required" required />
+                                                                                            <input type="datetime-local"
+                                                                                                   id="createTimeInput"
+                                                                                                   class="form-control required"
+                                                                                                   required/>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <input type="submit" class="btn btn-success" onclick="create()" value="Add New" />
+                                                                                    <input type="submit"
+                                                                                           class="btn btn-success"
+                                                                                           onclick="create()"
+                                                                                           value="Add New"/>
                                                                                 </form>
                                                                             </section>
                                                                         </div>
@@ -1011,19 +1052,19 @@
         init();
     });
 
-    function create(){
+    function create() {
         var name = $("#nameInput").val();
         var photo = $("#photoInput").val();
         var description = $("#desInput").val();
         var postCount = $("#viewCountInput").val();
         var createdTime = $("#createTimeInput").val();
         var postCategory = {
-            "name":name,
-            "photo":photo,
-            "description":description,
-            "postCount":postCount,
-            "createdTime":createdTime,
-            "postCategory":postCategory,
+            "name": name,
+            "photo": photo,
+            "description": description,
+            "postCount": postCount,
+            "createdTime": createdTime,
+            "postCategory": postCategory,
         }
         $.ajax({
             header: {
@@ -1044,12 +1085,12 @@
                 $('#newaccount').modal('toggle');
                 debugger;
                 $('#dataTableLoad').append(
-                        `<tr id="idRow`+postCategory.id+`"><td>` + postCategory.id + `</td><td>` + postCategory.name + `</td><td>` + postCategory.postCount + `</td><td>` + postCategory.description +
-                        `</td>
+                    `<tr id="idRow` + postCategory.id + `"><td>` + postCategory.id + `</td><td>` + postCategory.name + `</td><td>` + postCategory.postCount + `</td><td>` + postCategory.description +
+                    `</td>
                             <td><button class="btn btn-primary"><i class="far fa-edit"></i> Edit</button></td>
-                            <td><button onclick="deleteRow(`+ postCategory.id +`)" class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
+                            <td><button onclick="deleteRow(` + postCategory.id + `)" class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
                         </tr>`
-                    )
+                )
             },
             error: function () {
                 alertStatus("Add new Category fail", "error");
@@ -1057,22 +1098,22 @@
         });
     }
 
-    function update(id){
+    function update(id) {
         debugger;
-        var id = $(".idInput"+id).val();
-        var name = $(".nameInput"+id).val();
-        var photo = $(".photoInput"+id).val();
-        var description = $(".desInput"+id).val();
-        var postCount = $(".viewCountInput"+id).val();
-        var createdTime = $(".createTimeInput"+id).val();
+        var id = $(".idInput" + id).val();
+        var name = $(".nameInput" + id).val();
+        var photo = $(".photoInput" + id).val();
+        var description = $(".desInput" + id).val();
+        var postCount = $(".viewCountInput" + id).val();
+        var createdTime = $(".createTimeInput" + id).val();
         var postCategory = {
-            "id":id,
-            "name":name,
-            "photo":photo,
-            "description":description,
-            "postCount":postCount,
-            "createdTime":createdTime,
-            "postCategory":postCategory,
+            "id": id,
+            "name": name,
+            "photo": photo,
+            "description": description,
+            "postCount": postCount,
+            "createdTime": createdTime,
+            "postCategory": postCategory,
         }
         $.ajax({
             header: {
@@ -1087,14 +1128,14 @@
                 alertStatus("Update Category success", "success");
 
 
-                $('#idRow'+id).html(
+                $('#idRow' + id).html(
                     `<td>` + postCategory.id + `</td><td>` + postCategory.name + `</td><td>` + postCategory.postCount + `</td><td>` + postCategory.description +
                     `</td>
-                            <td><button class="btn btn-primary" data-toggle="modal" data-target="#newaccount`+postCategory.id+`"><i class="far fa-edit"></i> Edit</button></td>
-                            <td><button onclick="deleteRow(`+ postCategory.id +`)" class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
+                            <td><button class="btn btn-primary" data-toggle="modal" data-target="#newaccount` + postCategory.id + `"><i class="far fa-edit"></i> Edit</button></td>
+                            <td><button onclick="deleteRow(` + postCategory.id + `)" class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
                         `
                 )
-                $('#newaccount'+postCategory.id).modal('toggle');
+                $('#newaccount' + postCategory.id).modal('toggle');
             },
             error: function () {
                 alertStatus("Update Category fail", "error");
@@ -1113,16 +1154,16 @@
                 datasource = data;
                 $.each(datasource.data, function (index, item) {
                     $('#dataTableLoad').append(
-                        `<tr id="idRow`+item.id+`"><td>` + item.id + `</td><td>` + item.name + `</td><td>` + item.postCount + `</td><td>` + item.description +
+                        `<tr id="idRow` + item.id + `"><td>` + item.id + `</td><td>` + item.name + `</td><td>` + item.postCount + `</td><td>` + item.description +
                         `</td>
-                            <td><button class="btn btn-primary" data-toggle="modal" data-target="#newaccount`+item.id+`"><i class="far fa-edit"></i> Edit</button></td>
-                            <td><button onclick="deleteRow(`+ item.id +`)" class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
+                            <td><button class="btn btn-primary" data-toggle="modal" data-target="#newaccount` + item.id + `"><i class="far fa-edit"></i> Edit</button></td>
+                            <td><button onclick="deleteRow(` + item.id + `)" class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
                         </tr>`
                     )
                 });
                 $.each(datasource.data, function (index, item) {
                     $('#ModalDiv').append(
-                        `<div id="newaccount`+item.id+`"
+                        `<div id="newaccount` + item.id + `"
 
                                                          class="modal fade" role="dialog">
                                                         <div class="modal-dialog modal-lg">
@@ -1146,7 +1187,7 @@
                                                                                             <label class="block">id *</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="text"  value="`+item.id+`" class="form-control idInput`+item.id+`" readonly/>
+                                                                                            <input type="text"  value="` + item.id + `" class="form-control idInput` + item.id + `" readonly/>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="form-group row">
@@ -1154,7 +1195,7 @@
                                                                                             <label class="block">Name *</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="text"  value="`+item.name+`" class="form-control nameInput`+item.id+`" />
+                                                                                            <input type="text"  value="` + item.name + `" class="form-control nameInput` + item.id + `" />
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="form-group row">
@@ -1162,7 +1203,7 @@
                                                                                             <label class="block">Photo *</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="text"  value="`+item.photo+`" class="form-control photoInput`+item.id+`" />
+                                                                                            <input type="text"  value="` + item.photo + `" class="form-control photoInput` + item.id + `" />
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="form-group row">
@@ -1170,7 +1211,7 @@
                                                                                             <label class="block">Description *</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="text"  value="`+item.description+`" class="form-control desInput`+item.id+`" />
+                                                                                            <input type="text"  value="` + item.description + `" class="form-control desInput` + item.id + `" />
                                                                                         </div>
                                                                                     </div>
 
@@ -1181,7 +1222,7 @@
                                                                                             <label class="block">View Count*</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="number"  value="`+item.postCount+`" class="form-control viewCountInput`+item.id+`" />
+                                                                                            <input type="number"  value="` + item.postCount + `" class="form-control viewCountInput` + item.id + `" />
                                                                                         </div>
                                                                                     </div>
 
@@ -1190,10 +1231,10 @@
                                                                                             <label class="block">Create time:</label>
                                                                                         </div>
                                                                                         <div class="col-sm-12">
-                                                                                            <input type="datetime-local" value="`+item.createdTime+`" class="form-control required createTimeInput`+item.id+`" />
+                                                                                            <input type="datetime-local" value="` + item.createdTime + `" class="form-control required createTimeInput` + item.id + `" />
                                                                                         </div>
                                                                                     </div>
-                                                                                    <input type="button" class="btn btn-success" onclick="update(`+item.id+`)" value="Update" />
+                                                                                    <input type="button" class="btn btn-success" onclick="update(` + item.id + `)" value="Update" />
                                                                                 </form>
                                                                             </section>
                                                                         </div>
@@ -1270,6 +1311,15 @@
             }
         })
     }
+
+
+    //search
+    $("#searchCategory").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#tableData tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 </script>
 </body>
 
