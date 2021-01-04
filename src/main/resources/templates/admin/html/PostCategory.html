@@ -822,7 +822,7 @@
                                                                     <div class="col-md-12">
                                                                         <div id="wizardb">
                                                                             <section>
-                                                                                <form class="wizard-form" method="post"
+                                                                                <form class="wizard-form"
                                                                                       name="name" id="form-addnew">
                                                                                     <h3>Product Info</h3>
 
@@ -882,8 +882,8 @@
                                                                                         <div class="col-sm-12">
                                                                                             <input type="datetime-local"
                                                                                                    id="createTimeInput"
-                                                                                                   class="form-control required"
-                                                                                                   required/>
+                                                                                                   class="form-control required" required
+                                                                                                   />
                                                                                         </div>
                                                                                     </div>
                                                                                     <input type="submit"
@@ -1071,7 +1071,7 @@
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            url: "/admin/postCategory/postCategoryApi",
+            url: "/admin/postCategory/postCategoryApi2",
             type: 'POST',
             contentType: 'application/json; charset=UTF-8',
             data: JSON.stringify(postCategory),
@@ -1081,13 +1081,13 @@
                 $("#photoInput").val("");
                 $("#desInput").val("");
                 $("#viewCountInput").val("");
-                $("#createTimeInput").val("");
+                // $("#createTimeInput").val("");
                 $('#newaccount').modal('toggle');
                 debugger;
                 $('#dataTableLoad').append(
                     `<tr id="idRow` + postCategory.id + `"><td>` + postCategory.id + `</td><td>` + postCategory.name + `</td><td>` + postCategory.postCount + `</td><td>` + postCategory.description +
                     `</td>
-                            <td><button class="btn btn-primary"><i class="far fa-edit"></i> Edit</button></td>
+                            <td><button class="btn btn-primary" data-toggle="modal" data-target="#newaccount` + postCategory.id + `"><i class="far fa-edit"></i> Edit</button></td>
                             <td><button onclick="deleteRow(` + postCategory.id + `)" class="btn btn-primary"><i class="fas fa-trash-alt"></i> Delete</button></td></td>
                         </tr>`
                 )
@@ -1116,10 +1116,6 @@
             "postCategory": postCategory,
         }
         $.ajax({
-            header: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
             url: "/admin/postCategory/EditPostCategoryApi",
             type: 'POST',
             contentType: 'application/json; charset=UTF-8',
@@ -1305,9 +1301,9 @@
                             'Your file has been deleted.',
                             'success'
                         )
+                        $("#idRow" + idProduct).remove();
                     },
                 });
-                $("#idRow" + idProduct).remove();
             }
         })
     }

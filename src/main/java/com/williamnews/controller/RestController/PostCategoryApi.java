@@ -24,7 +24,7 @@ public class PostCategoryApi {
         rs.setMessage("SUCCESS");
         return rs;
     }
-    @RequestMapping(value = "/postCategoryApi", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/postCategoryApi2", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Response CreatePostCategory(@RequestBody PostcategoryEntity postcategoryEntity) {
         postCategoryService.save(postcategoryEntity);
         rs.setData(postcategoryEntity);

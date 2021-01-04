@@ -10,16 +10,145 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic' rel='stylesheet' type='text/css'>
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">	
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css" media="screen">	
+	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/owl.theme.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/ticker-style.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+    <style>
+        .box {
+            width: 500px;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: #191919;
+        ;
+            text-align: center;
+            transition: 0.25s;
+            margin-top: 100px
+        }
 
+        .box input[type="text"],
+        .box input[type="password"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s
+        }
+
+        .box h1 {
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500
+        }
+
+        .box input[type="text"]:focus,
+        .box input[type="password"]:focus {
+            width: 300px;
+            border-color: #2ecc71
+        }
+
+        .box input[type="submit"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #2ecc71;
+            padding: 14px 40px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+            cursor: pointer
+        }
+
+        .box input[type="submit"]:hover {
+            background: #2ecc71
+        }
+
+        .forgot {
+            text-decoration: underline
+        }
+
+        ul.social-network {
+            list-style: none;
+            display: inline;
+            margin-left: 0 !important;
+            padding: 0
+        }
+
+        ul.social-network li {
+            display: inline;
+            margin: 0 5px
+        }
+
+        .social-network a.icoFacebook:hover {
+            background-color: #3B5998
+        }
+
+        .social-network a.icoTwitter:hover {
+            background-color: #33ccff
+        }
+
+        .social-network a.icoGoogle:hover {
+            background-color: #BD3518
+        }
+
+        .social-network a.icoFacebook:hover i,
+        .social-network a.icoTwitter:hover i,
+        .social-network a.icoGoogle:hover i {
+            color: #fff
+        }
+
+        a.socialIcon:hover,
+        .socialHoverClass {
+            color: #44BCDD
+        }
+
+        .social-circle li a {
+            display: inline-block;
+            position: relative;
+            margin: 0 auto 0 auto;
+            border-radius: 50%;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            font-size: 20px
+        }
+
+        .social-circle li i {
+            margin: 0;
+            line-height: 50px;
+            text-align: center
+        }
+
+        .social-circle li a:hover i,
+        .triggeredHover {
+            transform: rotate(360deg);
+            transition: all 0.2s
+        }
+
+        .social-circle i {
+            color: #fff;
+            transition: all 0.8s;
+            transition: all 0.8s
+        }
+
+    </style>
 </head>
 <body>
 
@@ -66,7 +195,7 @@
 									<li><a href="#">Log In</a></li>
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
-							</div>	
+							</div>
 							<div class="col-md-3">
 								<ul class="social-icons">
 									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
@@ -76,7 +205,7 @@
 									<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
 									<li><a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a></li>
 								</ul>
-							</div>	
+							</div>
 						</div>
 					</div>
 				</div>
@@ -119,7 +248,7 @@
 							<ul class="nav navbar-nav navbar-left">
 
 								<li class="drop"><a class="home" href="index.html">Home</a>
-									
+
 									<ul class="dropdown">
 										<li><a href="index.html">Homepage Version 1</a></li>
 										<li><a href="home2.html">Homepage Version 2</a></li>
@@ -148,7 +277,7 @@
 													<div class="owl-wrapper">
 														<h1>Lifestyle</h1>
 														<div class="owl-carousel" data-num="4">
-														
+
 															<div class="item news-post standard-post">
 																<div class="post-gallery">
 																	<img src="upload/news-posts/art1.jpg" alt="">
@@ -231,7 +360,7 @@
 												<div class="owl-wrapper">
 													<h1>Latest Posts</h1>
 													<div class="owl-carousel" data-num="4">
-													
+
 														<div class="item news-post standard-post">
 															<div class="post-gallery">
 																<img src="upload/news-posts/art1.jpg" alt="">
@@ -318,7 +447,7 @@
 														<li><a href="#">Mobile</a></li>
 													</ul>
 													<div class="owl-carousel" data-num="4">
-													
+
 														<div class="item news-post standard-post">
 															<div class="post-gallery">
 																<img src="upload/news-posts/art1.jpg" alt="">
@@ -402,7 +531,7 @@
 												<div class="owl-wrapper">
 													<h1>Latest Posts</h1>
 													<div class="owl-carousel" data-num="4">
-													
+
 														<div class="item news-post video-post">
 															<img alt="" src="upload/news-posts/video1.jpg">
 															<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -413,7 +542,7 @@
 																</ul>
 															</div>
 														</div>
-													
+
 														<div class="item news-post video-post">
 															<img alt="" src="upload/news-posts/video2.jpg">
 															<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -424,7 +553,7 @@
 																</ul>
 															</div>
 														</div>
-													
+
 														<div class="item news-post video-post">
 															<img alt="" src="upload/news-posts/video3.jpg">
 															<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -435,7 +564,7 @@
 																</ul>
 															</div>
 														</div>
-													
+
 														<div class="item news-post video-post">
 															<img alt="" src="upload/news-posts/video4.jpg">
 															<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -446,7 +575,7 @@
 																</ul>
 															</div>
 														</div>
-													
+
 														<div class="item news-post video-post">
 															<img alt="" src="upload/news-posts/video1.jpg">
 															<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -755,7 +884,7 @@
 
 				<div class="features-today-box owl-wrapper">
 					<div class="owl-carousel" data-num="4">
-					
+
 						<div class="item news-post standard-post">
 							<div class="post-gallery">
 								<img src="upload/news-posts/st1.jpg" alt="">
@@ -856,7 +985,7 @@
 								</div>
 
 								<div class="owl-carousel" data-num="2">
-								
+
 									<div class="item">
 										<div class="news-post image-post2">
 											<div class="post-gallery">
@@ -905,9 +1034,9 @@
 													</ul>
 												</div>
 											</li>
-										</ul>									
+										</ul>
 									</div>
-								
+
 									<div class="item">
 										<div class="news-post image-post2">
 											<div class="post-gallery">
@@ -956,9 +1085,9 @@
 													</ul>
 												</div>
 											</li>
-										</ul>							
+										</ul>
 									</div>
-								
+
 									<div class="item">
 										<div class="news-post image-post2">
 											<div class="post-gallery">
@@ -1007,7 +1136,7 @@
 													</ul>
 												</div>
 											</li>
-										</ul>					
+										</ul>
 									</div>
 
 								</div>
@@ -1021,7 +1150,7 @@
 									<h1><span>Gallery</span></h1>
 								</div>
 								<div class="owl-carousel" data-num="3">
-								
+
 									<div class="item news-post image-post3">
 										<img src="upload/news-posts/gal1.jpg" alt="">
 										<div class="hover-box">
@@ -1031,7 +1160,7 @@
 											</ul>
 										</div>
 									</div>
-								
+
 									<div class="item news-post image-post3">
 										<img src="upload/news-posts/gal2.jpg" alt="">
 										<div class="hover-box">
@@ -1041,7 +1170,7 @@
 											</ul>
 										</div>
 									</div>
-								
+
 									<div class="item news-post image-post3">
 										<img src="upload/news-posts/gal3.jpg" alt="">
 										<div class="hover-box">
@@ -1051,7 +1180,7 @@
 											</ul>
 										</div>
 									</div>
-								
+
 									<div class="item news-post image-post3">
 										<img src="upload/news-posts/gal4.jpg" alt="">
 										<div class="hover-box">
@@ -1061,7 +1190,7 @@
 											</ul>
 										</div>
 									</div>
-								
+
 									<div class="item news-post image-post3">
 										<img src="upload/news-posts/gal1.jpg" alt="">
 										<div class="hover-box">
@@ -1169,7 +1298,7 @@
 
 										<div class="owl-wrapper">
 											<div class="owl-carousel" data-num="1">
-											
+
 												<div class="item">
 													<ul class="list-posts">
 														<li>
@@ -1403,7 +1532,7 @@
 		</section>
 		<!-- End block-wrapper-section -->
 
-		<!-- feature-video-section 
+		<!-- feature-video-section
 			================================================== -->
 		<section class="feature-video">
 			<div class="container">
@@ -1413,7 +1542,7 @@
 
 				<div class="features-video-box owl-wrapper">
 					<div class="owl-carousel" data-num="4">
-					
+
 						<div class="item news-post video-post">
 							<img alt="" src="upload/news-posts/video1.jpg">
 							<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -1424,7 +1553,7 @@
 								</ul>
 							</div>
 						</div>
-					
+
 						<div class="item news-post video-post">
 							<img alt="" src="upload/news-posts/video2.jpg">
 							<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -1435,7 +1564,7 @@
 								</ul>
 							</div>
 						</div>
-					
+
 						<div class="item news-post video-post">
 							<img alt="" src="upload/news-posts/video3.jpg">
 							<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -1446,7 +1575,7 @@
 								</ul>
 							</div>
 						</div>
-					
+
 						<div class="item news-post video-post">
 							<img alt="" src="upload/news-posts/video4.jpg">
 							<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -1457,7 +1586,7 @@
 								</ul>
 							</div>
 						</div>
-					
+
 						<div class="item news-post video-post">
 							<img alt="" src="upload/news-posts/video1.jpg">
 							<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -1468,7 +1597,7 @@
 								</ul>
 							</div>
 						</div>
-					
+
 						<div class="item news-post video-post">
 							<img alt="" src="upload/news-posts/video2.jpg">
 							<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -1479,7 +1608,7 @@
 								</ul>
 							</div>
 						</div>
-					
+
 						<div class="item news-post video-post">
 							<img alt="" src="upload/news-posts/video3.jpg">
 							<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -1490,7 +1619,7 @@
 								</ul>
 							</div>
 						</div>
-					
+
 						<div class="item news-post video-post">
 							<img alt="" src="upload/news-posts/video4.jpg">
 							<a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
@@ -1759,7 +1888,7 @@
 													</ul>
 												</div>
 											</li>
-										</ul>										
+										</ul>
 									</div>
 									<div class="tab-pane" id="option3">
 										<ul class="list-posts">
@@ -1813,7 +1942,7 @@
 													</ul>
 												</div>
 											</li>
-										</ul>										
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -1865,7 +1994,7 @@
 		</section>
 		<!-- End block-wrapper-section -->
 
-		<!-- footer 
+		<!-- footer
 			================================================== -->
 		<footer>
 			<div class="container">
@@ -2013,9 +2142,12 @@
 		</footer>
 		<!-- End footer -->
 
+
+
+
 	</div>
 	<!-- End Container -->
-	
+
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.migrate.js"></script>
 	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
